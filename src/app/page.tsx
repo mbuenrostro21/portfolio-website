@@ -1,4 +1,7 @@
 import { NavBar } from "../../components/NavBar";
+import { FaLinkedin, FaGithub,  } from "react-icons/fa";
+import { LuVault } from "react-icons/lu";
+
 
 export default function Home() {
   return (
