@@ -1,11 +1,10 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import { Anta, Saira } from "next/font/google";
 
-// Load both fonts with custom subsets or weights
 const anta = Anta({ subsets: ["latin"], weight: "400", variable: "--font-anta" });
 const saira = Saira({ subsets: ["latin"], weight: ["400", "600"], variable: "--font-saira" });
-import "./globals.css";
 
 
 export const metadata: Metadata = {
