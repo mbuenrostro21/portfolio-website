@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const NavBar: React.FC = () => {
   return (
-    <nav className="bg-white/4 shadow-md h-12 rounded py-3 px-5">
+    <nav className="bg-white/4 shadow-md h-12 rounded py-3 px-5 font-roboto">
       <div className="flex justify-between">
       <div><Link href="/">Logo</Link></div>
         <div className="flex gap-5">

@@ -15,7 +15,7 @@ export default function Home() {
           className="w-full h-full bg-cover bg-center"
           style={{ backgroundImage: `url('/la-backdrop.jpg')` }}
         >
-          <div className="w-full h-full bg-[var(--port-blue)]/70" />
+          <div className="w-full h-full bg-[var(--port-blue)]/60" />
         </div>
       </div>
 
@@ -37,12 +37,14 @@ export default function Home() {
               className="rounded-md flex items-center"
             />
             <div className="flex flex-row justify-center mt-5 gap-2">
-              <FaLinkedin size={30}/>
-              <FaGithub size={30}/>
-              <LuVault size={30}/>
-              
+              <a href="https://www.linkedin.com/in/michael-buenrostro/" target="_blank"><FaLinkedin size={30}/></a>
+              <a href="https://github.com/mbuenrostro21" target="_blank"><FaGithub size={30}/></a>
+              <a href="https://svault.mintlify.app/introduction" target="_blank"><LuVault size={30}/></a>
             </div>
           </div>
+        </div>
+        <div className="flex justify-center items-center">
+          <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm w-36 h-12 font-roboto">Contact Me</button>
         </div>
         
       </div>
