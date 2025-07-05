@@ -10,7 +10,7 @@ export const NavBar: React.FC = () => {
             <div><Link href="/about">About</Link></div>
             <div>Resume</div>
             <div><Link href="/">Projects</Link></div>
-            <div className="border border-white rounded-sm w-[75px] text-center bg-[#FDFDFA]/8">Contact</div>
+            <div className="border border-white rounded-sm w-[75px] text-center bg-[#FDFDFA]/8"><Link href={"/contact"}>Contact</Link></div>
         </div>
       </div>
     </nav>

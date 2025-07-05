@@ -2,7 +2,7 @@ import { NavBar } from "../../components/NavBar";
 import { FaLinkedin, FaGithub,  } from "react-icons/fa";
 import { LuVault } from "react-icons/lu";
 import Image from 'next/image'
-
+import Link from "next/link";
 
 
 
@@ -13,7 +13,7 @@ export default function Home() {
       <div className="absolute inset-0 z-0">
         <div
           className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url('/la-backdrop.jpg')` }}
+          style={{ backgroundImage: `url('/la-backdrop.svg')` }}
         >
           <div className="w-full h-full bg-[var(--port-blue)]/60" />
         </div>
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex justify-center items-center">
-          <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm w-36 h-12 font-roboto">Contact Me</button>
+          <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm w-36 h-12 font-roboto"><Link href={"/contact"}>Contact Me</Link></button>
         </div>
         
       </div>
