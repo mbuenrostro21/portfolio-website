@@ -1,4 +1,5 @@
 import { NavBar } from "../../../components/NavBar";
+import { Footer } from "../../../components/Footer";
 export default function Contact() {
     return (
       <div className="relative min-h-screen">
@@ -49,7 +50,7 @@ export default function Contact() {
                         required
                     />
                     <div className="flex flex-col items-center justify-center">
-                        <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm w-36 h-12 font-roboto" type="submit" >
+                        <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm w-36 h-12 font-anta" type="submit" >
                             Holla at ya boy
                         </button>
                     </div>
@@ -57,6 +58,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
+            <Footer />
       </div>
     );
   }
