@@ -1,6 +1,23 @@
 import { NavBar } from "../../../components/NavBar";
 import { Footer } from "../../../components/Footer";
+
 export default function Contact() {
+    
+    async function sendEmail(formData: FormData) {
+        await fetch("/api/send", {
+          method: "POST",
+          body: JSON.stringify({
+            name: formData.get("name"),
+            email: formData.get("email"),
+            message: formData.get("message"),
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+      }
+      
+
     return (
       <div className="relative min-h-screen">
         {/* Background Image with Black Overlay */}
