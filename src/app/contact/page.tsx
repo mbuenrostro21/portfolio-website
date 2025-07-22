@@ -1,21 +1,52 @@
+'use client'
 import { NavBar } from "../../../components/NavBar";
 import { Footer } from "../../../components/Footer";
+import { useState, useRef } from "react";
 
 export default function Contact() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIsLoading(true);
+   
+
+    const formData = new FormData(e.currentTarget);
     
-    async function sendEmail(formData: FormData) {
-        await fetch("/api/send", {
-          method: "POST",
-          body: JSON.stringify({
-            name: formData.get("name"),
-            email: formData.get("email"),
-            message: formData.get("message"),
-          }),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+    try {
+      const response = await fetch("/api/send", {
+        method: "POST",
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          message: formData.get("message"),
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      
+      if (response.ok) {
+        console.log("Email sent successfully");
+        // Reset form or show success message
+        formRef.current?.reset();
+        // Show success message
+        setIsSubmitted(true);
+        // Reset success message after 3 seconds
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 10000);
+      } else {
+        console.error("Failed to send email");
       }
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  }
       
 
     return (
@@ -36,15 +67,14 @@ export default function Contact() {
           <div className="flex flex-col justify-center items-center font-anta">
             <div className="bg-[var(--port-white)] mt-12 h-[500px] w-[700px] shadow-2xl rounded-lg flex flex-col items-center">
                 <h1 className="text-4xl text-[var(--port-blue)] my-12">Contact Me</h1>
-                <form className="flex flex-col text-[var(--port-blue)]/70 gap-12 w-3/4">
+                <form className="flex flex-col text-[var(--port-blue)]/70 gap-12 w-3/4" onSubmit={handleSubmit} ref={formRef}>
                     <input 
                         className="border-b-1 ps-2"
                         type="text"
                         id="name"
                         name="name"
-                        // value={formData.name}
-                        // onChange={handleChange}
                         placeholder="Name"
+                        disabled={isLoading}
                         required
                     />
                     <input
@@ -52,24 +82,30 @@ export default function Contact() {
                         type="email"
                         id="email"
                         name="email"
-                        // value={formData.email}
-                        // onChange={handleChange}
                         placeholder="Email"
+                        disabled={isLoading}
                         required
                     />
                     <textarea
                         className="border-b-1 ps-2 min-h-[100px] max-h-[100px]"
                         id="message"
                         name="message"
-                        // value={formData.message}
-                        // onChange={handleChange}
                         placeholder="Message"
+                        disabled={isLoading}
                         required
                     />
                     <div className="flex flex-col items-center justify-center">
-                        <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm w-36 h-12 font-anta" type="submit" >
-                            Holla at ya boy
-                        </button>
+                    <button 
+                        className={`${
+                          isSubmitted 
+                            ? 'bg-green-500 text-white border-green-500' 
+                            : 'bg-[var(--light-blue)] text-[var(--port-purple)] border-[var(--port-purple)]'
+                        } rounded-sm w-36 h-12 font-anta border transition-colors duration-300`}
+                        type="submit" 
+                        disabled={isLoading || isSubmitted}
+                      >
+                          {isLoading ? 'Sending...' : isSubmitted ? 'Successfully Submitted!' : 'Hire Me'}
+                      </button>
                     </div>
                 </form>
             </div>
