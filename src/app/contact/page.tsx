@@ -98,7 +98,7 @@ export default function Contact() {
                     <button 
                         className={`${
                           isSubmitted 
-                            ? 'bg-green-500 text-white border-green-500' 
+                            ? 'bg-white-500 text-white border-white-500' 
                             : 'bg-[var(--light-blue)] text-[var(--port-purple)] border-[var(--port-purple)]'
                         } rounded-sm w-36 h-12 font-anta border transition-colors duration-300`}
                         type="submit" 
