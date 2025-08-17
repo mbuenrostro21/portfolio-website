@@ -7,7 +7,7 @@ import {
 } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
 import { NavBar } from '../../../components/NavBar';
-
+//to test the token
 export default function Projects(){
     const [emblaRef] = useEmblaCarousel();
 
