@@ -54,6 +54,7 @@ export const projectsData = [
       id: 2,
       name: "Debtless",
       screenshot: "/images/debtless.jpg",
+      summary: "This application focuses on making personal finance more approachable. By visualizing savings goals in a simple and engaging way, it empowers users to budget effectively and stay motivated.",
       techStack: [
         {
           name: "React",
@@ -89,6 +90,7 @@ export const projectsData = [
       id: 3,
       name: "Movie Selector",
       screenshot: "/images/movie-selector.jpg",
+      summary: "As a movie enthusiast, I built this movie recommendation app to make film discovery more fun and effortless. By selecting a genre and release year, users receive curated suggestions that match their interests, taking the hassle out of movie night.",
       techStack: [
         {
           name: "React",
@@ -122,6 +124,7 @@ export const projectsData = [
       id: 4,
       name: "Domolo Labs",
       screenshot: "/images/domolo-labs.png",
+      summary: "This project is a website designed to highlight Domo’s musical talent and creative vision. With a clean layout and intuitive design, it provides visitors with an easy way to explore his artistry and connect with his work",
       techStack: [
         {
           name: "Next.js",
@@ -152,81 +155,5 @@ export const projectsData = [
       demoUrl: "https://demo-social-dashboard.example.com",
       githubUrl: "https://github.com/yourusername/social-media-dashboard"
     },
-    {
-      id: 5,
-      name: "Recipe Finder",
-      screenshot: "/images/recipe-finder-screenshot.png",
-      techStack: [
-        {
-          name: "React Native",
-          icon: SiReact,
-          color: "#61DAFB"
-        },
-        {
-          name: "Firebase",
-          icon: SiFirebase,
-          color: "#FFCA28"
-        },
-        {
-          name: "Spoonacular API",
-          icon: TiWeatherCloudy, // Using as placeholder - you might want a food/API icon
-          color: "#4CAF50"
-        },
-        {
-          name: "Redux",
-          icon: SiRedux,
-          color: "#764ABC"
-        }
-      ],
-      keyFeatures: [
-        "Search recipes by ingredients",
-        "Dietary restriction filters",
-        "Save favorite recipes",
-        "Shopping list generation",
-        "Nutritional information display",
-        "Step-by-step cooking instructions",
-        "Recipe sharing with friends"
-      ],
-      demoUrl: "https://demo-recipe-finder.example.com",
-      githubUrl: "https://github.com/yourusername/recipe-finder"
-    },
-    {
-      id: 6,
-      name: "Expense Tracker",
-      screenshot: "/images/expense-tracker-screenshot.png",
-      techStack: [
-        {
-          name: "Angular",
-          icon: SiAngular,
-          color: "#DD0031"
-        },
-        {
-          name: "Spring Boot",
-          icon: SiSpring,
-          color: "#6DB33F"
-        },
-        {
-          name: "MySQL",
-          icon: SiMysql,
-          color: "#4479A1"
-        },
-        {
-          name: "Chart.js",
-          icon: SiChartdotjs,
-          color: "#FF6384"
-        }
-      ],
-      keyFeatures: [
-        "Track income and expenses",
-        "Category-based expense organization",
-        "Budget planning and monitoring",
-        "Visual charts and reports",
-        "Monthly/yearly financial summaries",
-        "Receipt photo uploads",
-        "Export data to CSV/PDF"
-      ],
-      demoUrl: "https://demo-expense-tracker.example.com",
-      githubUrl: "https://github.com/yourusername/expense-tracker"
-    }
   ];
   
