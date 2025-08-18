@@ -7,6 +7,8 @@ import {
     SiTypescript,
     SiTailwindcss,
     SiSvelte,
+    SiJavascript,
+    SiNextdotjs
 } from "react-icons/si";
 
 
@@ -85,7 +87,7 @@ export const projectsData = [
     },
     {
       id: 3,
-      name: "Weather Dashboard",
+      name: "Movie Selector",
       screenshot: "/images/movie-selector.jpg",
       techStack: [
         {
@@ -94,8 +96,8 @@ export const projectsData = [
           color: "#61DAFB"
         },
         {
-          name: "TypeScript",
-          icon: SiTypescript,
+          name: "JavaScript",
+          icon: SiJavascript,
           color: "#3178C6"
         },
         {
@@ -104,27 +106,22 @@ export const projectsData = [
           color: "#06B6D4"
         },
         {
-          name: "OpenWeather API",
-          icon: TiWeatherCloudy,
+          name: "MongoDb",
+          icon: SiMongodb,
           color: "#FF8C00"
         }
       ],
       keyFeatures: [
-        "Current weather conditions display",
-        "5-day weather forecast",
-        "Location-based weather search",
-        "Interactive weather maps",
-        "Weather alerts and warnings",
-        "Favorite locations management",
-        "Temperature unit conversion (°C/°F)"
+        "Filter by movie genre",
+        "Save movies to a watchlist",
       ],
       demoUrl: "https://demo-weather.example.com",
       githubUrl: "https://github.com/yourusername/weather-dashboard"
     },
     {
       id: 4,
-      name: "Social Media Dashboard",
-      screenshot: "/images/social-dashboard-screenshot.png",
+      name: "Domolo Labs",
+      screenshot: "/images/domolo-labs.png",
       techStack: [
         {
           name: "Next.js",
@@ -132,29 +129,25 @@ export const projectsData = [
           color: "#000000"
         },
         {
-          name: "Python",
-          icon: SiPython,
+          name: "React",
+          icon: SiReact,
           color: "#3776AB"
         },
         {
-          name: "FastAPI",
-          icon: SiFastapi,
+          name: "Tailwind CSS",
+          icon: SiTailwindcss,
           color: "#009688"
         },
         {
-          name: "Redis",
-          icon: SiRedis,
+          name: "JavaScript",
+          icon: SiJavascript,
           color: "#DC382D"
         }
       ],
       keyFeatures: [
-        "Multi-platform social media analytics",
-        "Post scheduling and automation",
-        "Engagement metrics tracking",
-        "Audience insights and demographics",
-        "Content performance analysis",
-        "Custom reporting and exports",
-        "Team collaboration tools"
+        "Listen to Domolos lates music drops",
+        "View upcoming projects",
+        "Inquire about collabs or partnerships",
       ],
       demoUrl: "https://demo-social-dashboard.example.com",
       githubUrl: "https://github.com/yourusername/social-media-dashboard"
