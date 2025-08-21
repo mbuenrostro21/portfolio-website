@@ -28,9 +28,9 @@ export default function Projects(){
             <h1 className="text-6xl text-[var(--port-white)] my-12 font-anta">Showcases</h1>
             <div className="embla bg-red-500" ref={emblaRef}>
                 <div className="embla__container">
-                    <div className="embla__slide">Slide 1</div>
-                    <div className="embla__slide">Slide 2</div>
-                    <div className="embla__slide">Slide 3</div>
+                    <div className="embla__slide bg-blue-500">Slide 1</div>
+                    <div className="embla__slide bg-pink-500">Slide 2</div>
+                    <div className="embla__slide bg-green-500">Slide 3</div>
                 </div>
             </div>
           </div>

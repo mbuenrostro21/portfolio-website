@@ -26,13 +26,19 @@ export default function Home() {
         <div className="particle particle-4"></div>
         <div className="particle particle-5"></div>
         <div className="particle particle-6"></div>
+        <div className="particle particle-7"></div>
+        <div className="particle particle-8"></div>
+        <div className="particle particle-9"></div>
+        <div className="particle particle-10"></div>
+        <div className="particle particle-11"></div>
+        <div className="particle particle-12"></div>
 
         {/* Moving Clouds */}
-        <div className="cloud cloud-1">☁️</div>
+        {/* <div className="cloud cloud-1">☁️</div>
         <div className="cloud cloud-2">☁️</div>
         <div className="cloud cloud-3">☁️</div>
         <div className="cloud cloud-4">☁️</div>
-        <div className="cloud cloud-5">☁️</div>
+        <div className="cloud cloud-5">☁️</div> */}
 
         {/* Twinkling Stars */}
         <div className="star star-1">✨</div>
@@ -104,6 +110,12 @@ export default function Home() {
         .particle-4 { top: 80%; left: 60%; animation-delay: 3s; animation-duration: 9s; }
         .particle-5 { top: 10%; left: 80%; animation-delay: 4s; animation-duration: 11s; }
         .particle-6 { top: 50%; left: 90%; animation-delay: 5s; animation-duration: 6s; }
+        .particle-7 { top: 20%; left: 30%; animation-delay: 0s; animation-duration: 8s; }
+        .particle-8 { top: 60%; left: 50%; animation-delay: 1s; animation-duration: 10s; }
+        .particle-9 { top: 40%; left: 70%; animation-delay: 2s; animation-duration: 7s; }
+        .particle-10 { top: 70%; left: 60%; animation-delay: 3s; animation-duration: 9s; }
+        .particle-11 { top: 10%; left: 35%; animation-delay: 4s; animation-duration: 11s; }
+        .particle-12 { top: 50%; left: 80%; animation-delay: 5s; animation-duration: 6s; }
 
         @keyframes float {
           0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
