@@ -16,7 +16,7 @@ export const projectsData = [
     {
       id: 1,
       name: "Svault",
-      screenshot: "/images/svault.jpg",
+      screenshot: "/svault.jpg",
       summary: "Svault is an authentication and authorization library for developers who use SvelteKit. This library makes it extremely easy for the developer to implement OAuth 2.0, Authorization, Cookies, and Sessions in your Login and Signup forms.",
       techStack: [
         {
@@ -53,7 +53,7 @@ export const projectsData = [
     {
       id: 2,
       name: "Debtless",
-      screenshot: "/images/debtless.jpg",
+      screenshot: "/debtless.jpg",
       summary: "This application focuses on making personal finance more approachable. By visualizing savings goals in a simple and engaging way, it empowers users to budget effectively and stay motivated.",
       techStack: [
         {
@@ -89,7 +89,7 @@ export const projectsData = [
     {
       id: 3,
       name: "Movie Selector",
-      screenshot: "/images/movie-selector.jpg",
+      screenshot: "/movie-selector.jpg",
       summary: "As a movie enthusiast, I built this movie recommendation app to make film discovery more fun and effortless. By selecting a genre and release year, users receive curated suggestions that match their interests, taking the hassle out of movie night.",
       techStack: [
         {
@@ -123,7 +123,7 @@ export const projectsData = [
     {
       id: 4,
       name: "Domolo Labs",
-      screenshot: "/images/domolo-labs.png",
+      screenshot: "/domolo-labs.png",
       summary: "This project is a website designed to highlight Domo’s musical talent and creative vision. With a clean layout and intuitive design, it provides visitors with an easy way to explore his artistry and connect with his work",
       techStack: [
         {
