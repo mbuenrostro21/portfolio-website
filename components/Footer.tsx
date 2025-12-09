@@ -17,7 +17,7 @@ export const Footer = () => {
                     Resume
                 </div>
                 <div>
-                    <Link href={"/"}>Projects</Link>
+                    <Link href={"/projects"}>Projects</Link>
                 </div>
             </div>
             <div className="flex items-center justify-center gap-5 pb-5">
