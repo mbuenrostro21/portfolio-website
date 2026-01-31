@@ -76,7 +76,7 @@ export default function Projects() {
                           src={project.screenshot}
                           alt={project.name}
                           fill
-                          className="object-cover"
+                          className="object-fit"
                           unoptimized
                         />
                       </div>
@@ -126,8 +126,8 @@ export default function Projects() {
             >
               <X className="w-6 h-6 text-gray-600" />
             </button>
-
-            {/* Modal Header */}
+            <div className='grid'>
+                {/* Modal Header */}
             <div className="relative h-64 w-full">
               <Image
                 src={selectedProject.screenshot}
@@ -188,9 +188,11 @@ export default function Projects() {
                   ))}
                 </ul>
               </div>
+            </div>
+            
 
               {/* Action Buttons */}
-              <div className="flex gap-4 pt-4 border-t border-gray-200">
+              {/* <div className="flex gap-4 pt-4 border-t border-gray-200">
                 <a
                   href={selectedProject.demoUrl}
                   target="_blank"
@@ -207,7 +209,7 @@ export default function Projects() {
                 >
                   View Code
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

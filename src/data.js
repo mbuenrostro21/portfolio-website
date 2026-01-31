@@ -14,7 +14,54 @@ import {
 
 export const projectsData = [
     {
-      id: 1,
+        id: 1,
+        name: "Delet",
+        screenshot: "/delet.png",
+        summary: "Delet is the smart access and automation platform that delivers accelerated leasing, security, and greater operational efficiency.",
+        techStack: [
+          {
+            name: "React",
+            icon: SiReact,
+            color: "#4FC08D"
+          },
+          {
+            name: "Node.js",
+            icon: SiNodedotjs,
+            color: "#339933"
+          },
+          {
+            name: "MongoDb",
+            icon: SiMongodb,
+            color: "#FF8C00"
+          },
+          {
+            name: "JavaScript",
+            icon: SiJavascript,
+            color: "#3178C6"
+          },
+          {
+            name: "Express.js",
+            icon: SiExpress,
+            color: "#000000"
+          },
+          {
+            name: "Tailwind CSS",
+            icon: SiTailwindcss,
+            color: "#009688"
+          }
+        ],
+        keyFeatures: [
+          "Centralized Analytics Dashboard",
+          "Integrated Lead Management",
+          "Intuitive Property Onboarding",
+          "Secure OTP Access Control",
+          "Interactive Showings Calendar",
+        ],
+        demoUrl: "https://app.delet.com",
+        githubUrl: "https://github.com/yourusername/ecommerce-platform"
+      },
+    {
+      id: 2,
       name: "Svault",
       screenshot: "/svault.jpg",
       summary: "Svault is an authentication and authorization library for developers who use SvelteKit. This library makes it extremely easy for the developer to implement OAuth 2.0, Authorization, Cookies, and Sessions in your Login and Signup forms.",
@@ -51,7 +98,7 @@ export const projectsData = [
       githubUrl: "https://github.com/yourusername/ecommerce-platform"
     },
     {
-      id: 2,
+      id: 3,
       name: "Debtless",
       screenshot: "/debtless.jpg",
       summary: "This application focuses on making personal finance more approachable. By visualizing savings goals in a simple and engaging way, it empowers users to budget effectively and stay motivated.",
@@ -87,7 +134,7 @@ export const projectsData = [
       githubUrl: "https://github.com/yourusername/task-manager"
     },
     {
-      id: 3,
+      id: 4,
       name: "Movie Selector",
       screenshot: "/movie-selector.jpg",
       summary: "As a movie enthusiast, I built this movie recommendation app to make film discovery more fun and effortless. By selecting a genre and release year, users receive curated suggestions that match their interests, taking the hassle out of movie night.",
@@ -121,7 +168,7 @@ export const projectsData = [
       githubUrl: "https://github.com/yourusername/weather-dashboard"
     },
     {
-      id: 4,
+      id: 5,
       name: "Domolo Labs",
       screenshot: "/domolo-labs.png",
       summary: "This project is a website designed to highlight Domo’s musical talent and creative vision. With a clean layout and intuitive design, it provides visitors with an easy way to explore his artistry and connect with his work",
