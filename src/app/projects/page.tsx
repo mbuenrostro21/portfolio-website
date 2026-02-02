@@ -52,7 +52,7 @@ export default function Projects() {
       <div className="absolute inset-0 z-0">
         <div
           className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url('/textured-blue.jpg')` }}
+          style={{ backgroundImage: `url('/textured-blue.png')` }}
         ></div>
       </div>
 
@@ -140,7 +140,7 @@ export default function Projects() {
                     src={selectedProject.screenshot}
                     alt={selectedProject.name}
                     fill
-                    className="object-cover"
+                    className="object-fit"
                     unoptimized
                   />
                 </div>

@@ -55,9 +55,9 @@ export default function Contact() {
         <div className="absolute inset-0 z-0">
           <div
             className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url('/palm-trees-enhanced.png')` }}
+            style={{ backgroundImage: `url('/palm-trees-deep.png')` }}
           >
-            <div className="w-full h-full bg-[var(--port-blue)]/60" />
+            <div className="w-full h-full bg-[var(--night-blue)]/20" />
           </div>
         </div>
   

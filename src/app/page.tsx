@@ -13,7 +13,7 @@ export default function Home() {
           className="w-full h-full bg-cover bg-center"
           style={{ backgroundImage: `url('/la-backdrop-enhanced.png')` }}
         >
-          <div className="w-full h-full bg-[var(--night-blue)]/50" />
+          <div className="w-full h-full bg-[var(--port-blue)]/20" />
         </div>
       </div>
 
