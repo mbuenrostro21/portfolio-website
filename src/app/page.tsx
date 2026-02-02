@@ -65,12 +65,37 @@ export default function Home() {
       <div className="relative z-10">
         <NavBar />
         <div className="grid grid-cols-10 grid-rows-20 gap-7 m-5">
-          <div className="col-start-2 col-span-5 row-start-4 row-span-18 flex flex-col items-start text-left gap-8 ms-10">
+          <div className="col-start-2 col-span-5 row-start-4 row-span-18 flex flex-col items-start text-left gap-8">
             <h1 className="font-anta text-5xl">Michael Buenrostro</h1>
             <h2 className="font-anta text-4xl">Full Stack Developer</h2>
-            <h3 className="font-roboto font-bold text-2xl">Software Engineer crafting solutions through innovation and dedication</h3>
           </div>
-          <div className="col-start-7 col-span-3 row-start-3 row-span-18 flex flex-col items-center justify-end">
+          
+          <div className="row-start-9 row-span-9 col-start-2 col-span-5 bg-[var(--light-blue)] rounded-md border border-[var(--port-purple)]">
+            <h1 className="font-anta text-[var(--port-purple)] m-4 text-2xl">About Me</h1>
+            <p className="font-roboto mx-4 my-8 text-[var(--port-purple)]">From the gritty streets of Huntington Park, where opportunities were scarce, education faltered, and crime seemed like the only way out, Michael was never one to be defined by his circumstances. In a city where dreams were often crushed by harsh realities, he refused to let his environment dictate his future. </p>
+          </div>
+
+          <div className="row-start-18 row-span-4 col-start-2 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
+            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">3+</h1>
+            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Years Experience</p>
+          </div>
+          <div className="row-start-18 row-span-4 col-start-3 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
+            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">35+</h1>
+            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Features Shipped</p>
+          </div>
+          <div className="row-start-18 row-span-4 col-start-4 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
+            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">1M+</h1>
+            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Database Records</p>
+          </div>
+          <div className="row-start-18 row-span-4 col-start-5 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
+            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">300+</h1>
+            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Code Reviews</p>
+          </div>
+          <div className="row-start-18 row-span-4 col-start-6 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
+            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">100%</h1>
+            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Employer Confidence</p>
+          </div>
+          <div className="col-start-7 col-span-3 row-start-4 row-span-18 ms-12 flex flex-col items-center justify-end">
             <Image 
               src={'/port-photo.jpg'}
               alt="portfolio photo"
@@ -83,12 +108,12 @@ export default function Home() {
               <a href="https://github.com/mbuenrostro21" target="_blank"><FaGithub size={30}/></a>
               <a href="https://svault.mintlify.app/introduction" target="_blank"><LuVault size={30}/></a>
             </div>
+            <div className="flex justify-center items-center mt-12">
+              <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm w-42 h-12 font-roboto">
+                <Link href={"/contact"}>Contact Me</Link>
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="flex justify-center items-center">
-          <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm w-36 h-12 font-roboto">
-            <Link href={"/contact"}>Contact Me</Link>
-          </button>
         </div>
       </div>
 
