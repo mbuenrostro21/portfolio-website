@@ -72,7 +72,9 @@ export default function Home() {
           
           <div className="row-start-9 row-span-9 col-start-2 col-span-5 bg-[var(--light-blue)] rounded-md border border-[var(--port-purple)]">
             <h1 className="font-anta text-[var(--port-purple)] m-4 text-2xl">About Me</h1>
-            <p className="font-roboto mx-4 my-8 text-[var(--port-purple)]">From the gritty streets of Huntington Park, where opportunities were scarce, education faltered, and crime seemed like the only way out, Michael was never one to be defined by his circumstances. In a city where dreams were often crushed by harsh realities, he refused to let his environment dictate his future. </p>
+            <p className="font-roboto m-4 text-[var(--port-purple)]">I am a Full Stack Developer with over 3 years of experience building scalable, production-ready applications. My expertise lies in bridging the gap between complex logic and the high-impact results that drive business growth. I thrive at the intersection of clean architecture and purposeful problem-solving. My primary focus is on the Frontend, where I specialize in crafting intuitive, high-performance interfaces. I believe a great product is defined by its User Experience. To me, code is successful only when it provides a frictionless journey for the user.</p>
+            {/* <p className="font-roboto mx-4 mb-6 text-[var(--port-purple)]">My primary focus is on the Frontend, where I specialize in crafting intuitive, high-performance interfaces. I believe a great product is defined by its User Experience. To me, code is successful only when it provides a frictionless journey for the user.</p> */}
+
           </div>
 
           <div className="row-start-18 row-span-4 col-start-2 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">

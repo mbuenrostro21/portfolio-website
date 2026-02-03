@@ -58,7 +58,7 @@ export const projectsData = [
           "Interactive Showings Calendar",
         ],
         demoUrl: "https://app.delet.com",
-        githubUrl: "https://github.com/yourusername/ecommerce-platform"
+        githubUrl: "https://app.delet.com"
       },
     {
       id: 2,
@@ -95,7 +95,7 @@ export const projectsData = [
         "Developer Library",
       ],
       demoUrl: "https://demo-ecommerce.example.com",
-      githubUrl: "https://github.com/yourusername/ecommerce-platform"
+      githubUrl: "https://github.com/oslabs-beta/Svault"
     },
     {
       id: 3,
@@ -131,7 +131,7 @@ export const projectsData = [
         "Progress tracking and analytics of your savings",
       ],
       demoUrl: "https://demo-taskmanager.example.com",
-      githubUrl: "https://github.com/yourusername/task-manager"
+      githubUrl: "https://github.com/Team-Debtless/Debtless"
     },
     {
       id: 4,
@@ -163,44 +163,45 @@ export const projectsData = [
       keyFeatures: [
         "Filter by movie genre",
         "Save movies to a watchlist",
+        "No decision making needed for movie night",
       ],
       demoUrl: "https://demo-weather.example.com",
-      githubUrl: "https://github.com/yourusername/weather-dashboard"
+      githubUrl: "https://github.com/mbuenrostro21/Solo-Project--CodeSmith"
     },
-    {
-      id: 5,
-      name: "Domolo Labs",
-      screenshot: "/domolo-labs.png",
-      summary: "This project is a website designed to highlight Domo’s musical talent and creative vision. With a clean layout and intuitive design, it provides visitors with an easy way to explore his artistry and connect with his work",
-      techStack: [
-        {
-          name: "Next.js",
-          icon: SiNextdotjs,
-          color: "#000000"
-        },
-        {
-          name: "React",
-          icon: SiReact,
-          color: "#3776AB"
-        },
-        {
-          name: "Tailwind CSS",
-          icon: SiTailwindcss,
-          color: "#009688"
-        },
-        {
-          name: "JavaScript",
-          icon: SiJavascript,
-          color: "#DC382D"
-        }
-      ],
-      keyFeatures: [
-        "Listen to Domolos lates music drops",
-        "View upcoming projects",
-        "Inquire about collabs or partnerships",
-      ],
-      demoUrl: "https://demo-social-dashboard.example.com",
-      githubUrl: "https://github.com/yourusername/social-media-dashboard"
-    },
+    // {
+    //   id: 5,
+    //   name: "Domolo Labs",
+    //   screenshot: "/domolo-labs.png",
+    //   summary: "This project is a website designed to highlight Domo’s musical talent and creative vision. With a clean layout and intuitive design, it provides visitors with an easy way to explore his artistry and connect with his work",
+    //   techStack: [
+    //     {
+    //       name: "Next.js",
+    //       icon: SiNextdotjs,
+    //       color: "#000000"
+    //     },
+    //     {
+    //       name: "React",
+    //       icon: SiReact,
+    //       color: "#3776AB"
+    //     },
+    //     {
+    //       name: "Tailwind CSS",
+    //       icon: SiTailwindcss,
+    //       color: "#009688"
+    //     },
+    //     {
+    //       name: "JavaScript",
+    //       icon: SiJavascript,
+    //       color: "#DC382D"
+    //     }
+    //   ],
+    //   keyFeatures: [
+    //     "Listen to Domolos lates music drops",
+    //     "View upcoming projects",
+    //     "Inquire about collabs or partnerships",
+    //   ],
+    //   demoUrl: "https://demo-social-dashboard.example.com",
+    //   githubUrl: "https://github.com/yourusername/social-media-dashboard"
+    // },
   ];
   
