@@ -198,9 +198,14 @@ export default function Projects() {
                     {/* <button className="flex-1 flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl transition-all">
                         <ExternalLink size={18} /> Live Demo
                     </button> */}
-                    <button className="flex-1 flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-bold py-3 px-6 rounded-xl transition-all">
+                    <a 
+                      href={selectedProject.githubUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex-1 flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-bold py-3 px-6 rounded-xl transition-all"
+                    >
                         <Github size={18} /> Source Code
-                    </button>
+                    </a>
                 </div>
               </div>
 

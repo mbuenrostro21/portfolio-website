@@ -7,8 +7,16 @@ export const NavBar: React.FC = () => {
       <div className="flex justify-between">
       <div><Link href="/">Logo</Link></div>
         <div className="flex gap-5">
-            <div><Link href="/about">About</Link></div>
-            <div>Resume</div>
+            {/* <div><Link href="/about">About</Link></div> */}
+            <div>
+            <a 
+                href="/Michael_Buenrostro_Resume_2025.pdf" 
+                download="Michael_Buenrostro_Resume_2025.pdf"
+                className="text-white cursor-pointer hover:text-[var(--light-blue)] transition-colors"
+            >
+              Resume
+            </a>
+            </div>
             <div><Link href="/projects">Projects</Link></div>
             <div className="border border-white rounded-sm w-[75px] text-center bg-[#FDFDFA]/8"><Link href={"/contact"}>Contact</Link></div>
         </div>
