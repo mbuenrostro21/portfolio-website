@@ -1,10 +1,26 @@
 'use client'
 import React, { useCallback, useState, useEffect } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
+import type { EmblaCarouselType } from 'embla-carousel'
 import { ChevronLeft, ChevronRight, X, ExternalLink, Github } from 'lucide-react'
 import { NavBar } from '../../../components/NavBar';
 import { projectsData } from '../../data';
 import Image from 'next/image';
+
+// Define the Project type based on your projectsData structure
+type Project = {
+  id: string | number;
+  name: string;
+  screenshot: string;
+  summary: string;
+  techStack: Array<{
+    name: string;
+    icon: React.ComponentType<{ color?: string; size?: number; className?: string }>;
+    color: string;
+  }>;
+  keyFeatures: string[];
+  githubUrl: string;
+};
 
 export default function Projects() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -13,7 +29,7 @@ export default function Projects() {
     containScroll: 'trimSnaps',
   });
   
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollPrev = useCallback(() => {
@@ -24,7 +40,7 @@ export default function Projects() {
     if (emblaApi) emblaApi.scrollNext()
   }, [emblaApi])
 
-  const onSelect = useCallback((emblaApi) => {
+  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setSelectedIndex(emblaApi.selectedScrollSnap())
   }, [])
 
@@ -35,7 +51,7 @@ export default function Projects() {
     emblaApi.on('select', onSelect)
   }, [emblaApi, onSelect])
 
-  const openModal = (project) => {
+  const openModal = (project: Project) => {
     setSelectedProject(project);
     // Prevent scrolling on the body when modal is open
     document.body.style.overflow = 'hidden';
