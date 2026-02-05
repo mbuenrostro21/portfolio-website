@@ -33,13 +33,6 @@ export default function Home() {
         <div className="particle particle-11"></div>
         <div className="particle particle-12"></div>
 
-        {/* Moving Clouds */}
-        {/* <div className="cloud cloud-1">☁️</div>
-        <div className="cloud cloud-2">☁️</div>
-        <div className="cloud cloud-3">☁️</div>
-        <div className="cloud cloud-4">☁️</div>
-        <div className="cloud cloud-5">☁️</div> */}
-
         {/* Twinkling Stars */}
         <div className="star star-1">✨</div>
         <div className="star star-2">✨</div>
@@ -64,56 +57,100 @@ export default function Home() {
       {/* Foreground Content */}
       <div className="relative z-10">
         <NavBar />
-        <div className="grid grid-cols-10 grid-rows-20 gap-7 m-5">
-          <div className="col-start-2 col-span-5 row-start-4 row-span-18 flex flex-col items-start text-left gap-8">
-            <h1 className="font-anta text-5xl">Michael Buenrostro</h1>
-            <h2 className="font-anta text-4xl">Full Stack Developer</h2>
-          </div>
-          
-          <div className="row-start-9 row-span-9 col-start-2 col-span-5 bg-[var(--light-blue)] rounded-md border border-[var(--port-purple)]">
-            <h1 className="font-anta text-[var(--port-purple)] m-4 text-2xl">About Me</h1>
-            <p className="font-roboto m-4 text-[var(--port-purple)]">I am a Full Stack Developer with over 3 years of experience building scalable, production-ready applications. My expertise lies in bridging the gap between complex logic and the high-impact results that drive business growth. I thrive at the intersection of clean architecture and purposeful problem-solving. My primary focus is on the Frontend, where I specialize in crafting intuitive, high-performance interfaces. I believe a great product is defined by its User Experience. To me, code is successful only when it provides a frictionless journey for the user.</p>
-            {/* <p className="font-roboto mx-4 mb-6 text-[var(--port-purple)]">My primary focus is on the Frontend, where I specialize in crafting intuitive, high-performance interfaces. I believe a great product is defined by its User Experience. To me, code is successful only when it provides a frictionless journey for the user.</p> */}
+        
+        {/* Mobile-First Responsive Layout */}
+        <div className="px-4 py-8 md:px-8 lg:px-16 max-w-8xl mx-auto">
+          {/* Mobile: Vertical Stack, Desktop: Grid Layout */}
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
+            
+            {/* Left Column */}
+            <div className="flex flex-col gap-8">
+              {/* Header Section */}
+              <div className="flex flex-col items-start text-left gap-4 md:gap-6">
+                <h1 className="font-anta text-3xl md:text-4xl lg:text-5xl">Michael Buenrostro</h1>
+                <h2 className="font-anta text-2xl md:text-3xl lg:text-4xl">Full Stack Developer</h2>
+              </div>
 
-          </div>
+              {/* Photo Section - Shows here on mobile */}
+              <div className="flex lg:hidden flex-col items-center gap-4">
+                <Image 
+                  src={'/port-photo.jpg'}
+                  alt="portfolio photo"
+                  width={250}
+                  height={250}
+                  className="rounded-md"
+                />
+                <div className="flex flex-row justify-center gap-3">
+                  <a href="https://www.linkedin.com/in/michael-buenrostro/" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedin size={30}/>
+                  </a>
+                  <a href="https://github.com/mbuenrostro21" target="_blank" rel="noopener noreferrer">
+                    <FaGithub size={30}/>
+                  </a>
+                  <a href="https://svault.mintlify.app/introduction" target="_blank" rel="noopener noreferrer">
+                    <LuVault size={30}/>
+                  </a>
+                </div>
+              </div>
+              
+              {/* About Me Section */}
+              <div className="bg-[var(--light-blue)] rounded-md border border-[var(--port-purple)] p-5 md:p-6">
+                <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-3">About Me</h1>
+                <p className="font-roboto text-[var(--port-purple)] text-sm md:text-base leading-relaxed">
+                  I am a Full Stack Developer with over 3 years of experience building scalable, production-ready applications. My expertise lies in bridging the gap between complex logic and the high-impact results that drive business growth. I thrive at the intersection of clean architecture and purposeful problem-solving. My primary focus is on the Frontend, where I specialize in crafting intuitive, high-performance interfaces. I believe a great product is defined by its User Experience. To me, code is successful only when it provides a frictionless journey for the user.
+                </p>
+              </div>
 
-          <div className="row-start-18 row-span-4 col-start-2 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
-            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">3+</h1>
-            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Years Experience</p>
-          </div>
-          <div className="row-start-18 row-span-4 col-start-3 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
-            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">35+</h1>
-            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Features Shipped</p>
-          </div>
-          <div className="row-start-18 row-span-4 col-start-4 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
-            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">1M+</h1>
-            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Database Records</p>
-          </div>
-          <div className="row-start-18 row-span-4 col-start-5 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
-            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">300+</h1>
-            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Code Reviews</p>
-          </div>
-          <div className="row-start-18 row-span-4 col-start-6 col-span-1 bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)]">
-            <h1 className="font-anta text-[var(--port-purple)] text-2xl mb-2 font-bold">100%</h1>
-            <p className="font-roboto text-[var(--port-purple)] text-[12px]">Employer Confidence</p>
-          </div>
-          <div className="col-start-7 col-span-3 row-start-4 row-span-18 ms-12 flex flex-col items-center justify-end">
-            <Image 
-              src={'/port-photo.jpg'}
-              alt="portfolio photo"
-              width={300}
-              height={300}
-              className="rounded-md flex items-center"
-            />
-            <div className="flex flex-row justify-center mt-5 gap-2">
-              <a href="https://www.linkedin.com/in/michael-buenrostro/" target="_blank"><FaLinkedin size={30}/></a>
-              <a href="https://github.com/mbuenrostro21" target="_blank"><FaGithub size={30}/></a>
-              <a href="https://svault.mintlify.app/introduction" target="_blank"><LuVault size={30}/></a>
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
+                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5">
+                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">3+</h1>
+                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Years Experience</p>
+                </div>
+                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 ">
+                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">35+</h1>
+                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Features Shipped</p>
+                </div>
+                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 ">
+                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">1M+</h1>
+                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Database Records</p>
+                </div>
+                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 ">
+                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">300+</h1>
+                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Code Reviews</p>
+                </div>
+                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 col-span-2 sm:col-span-1">
+                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">100%</h1>
+                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Employer Confidence</p>
+                </div>
+              </div>
             </div>
-            <div className="flex justify-center items-center mt-12">
-              <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm w-42 h-12 font-roboto">
-                <Link href={"/contact"}>Contact Me</Link>
-              </button>
+
+            {/* Right Column - Photo Section (Desktop Only) */}
+            <div className="hidden lg:flex flex-col items-center justify-start pt-6">
+              <Image 
+                src={'/port-photo.jpg'}
+                alt="portfolio photo"
+                width={300}
+                height={300}
+                className="rounded-md"
+              />
+              <div className="flex flex-row justify-center mt-6 gap-3">
+                <a href="https://www.linkedin.com/in/michael-buenrostro/" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin size={30}/>
+                </a>
+                <a href="https://github.com/mbuenrostro21" target="_blank" rel="noopener noreferrer">
+                  <FaGithub size={30}/>
+                </a>
+                <a href="https://svault.mintlify.app/introduction" target="_blank" rel="noopener noreferrer">
+                  <LuVault size={30}/>
+                </a>
+              </div>
+              <div className="flex justify-center items-center mt-8">
+                <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm px-8 py-3 font-roboto hover:bg-opacity-90 transition-all">
+                  <Link href={"/contact"}>Contact Me</Link>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -147,25 +184,6 @@ export default function Home() {
         @keyframes float {
           0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
           50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
-        }
-
-        /* Moving Clouds */
-        .cloud {
-          position: absolute;
-          font-size: 8rem;
-          opacity: 0.3;
-          animation: drift 20s linear infinite;
-        }
-
-        .cloud-1 { top: 10%; left: -10%; animation-delay: 0s; animation-duration: 70s;}
-        .cloud-2 { top: 5%; left: -10%; animation-delay: 14s; animation-duration: 70s; }
-        .cloud-3 { top: 9%; left: -10%; animation-delay: 28s; animation-duration: 70s; }
-        .cloud-4 { top: 8%; left: -10%; animation-delay: 42s; animation-duration: 70s; }
-        .cloud-5 { top: 2%; left: -10%; animation-delay: 56s; animation-duration: 70s; }
-
-        @keyframes drift {
-          from { transform: translateX(0); }
-          to { transform: translateX(calc(100vw + 100px)); }
         }
 
         /* Twinkling Stars */
@@ -232,6 +250,18 @@ export default function Home() {
         /* Ensure overflow is hidden to prevent scrollbars from animations */
         .overflow-hidden {
           overflow: hidden;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 768px) {
+          .star {
+            font-size: 0.75rem;
+          }
+          
+          .particle {
+            width: 3px;
+            height: 3px;
+          }
         }
       `}</style>
     </div>
