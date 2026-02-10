@@ -19,7 +19,8 @@ type Project = {
     color: string;
   }>;
   keyFeatures: string[];
-  githubUrl: string;
+  demoUrl?: string;
+  githubUrl?: string;
 };
 
 export default function Projects() {
@@ -95,7 +96,7 @@ export default function Projects() {
                           src={project.screenshot}
                           alt={project.name}
                           fill
-                          className="object-fit"
+                          className="object-cover"
                           unoptimized
                         />
                       </div>
@@ -214,16 +215,32 @@ export default function Projects() {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 sm:gap-4 mt-auto pt-4 sm:pt-6">
+                {selectedProject.githubUrl && (
                     <a 
                       href={selectedProject.githubUrl} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="flex-1 flex items-center justify-center gap-2 bg-gray-900 hover:bg-black text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl transition-all text-sm sm:text-base"
                     >
-                        <Github size={16} className="sm:w-[18px] sm:h-[18px]" /> 
-                        <span className="hidden sm:inline">Source Code</span>
-                        <span className="sm:hidden">Code</span>
+                      <Github size={16} className="sm:w-[18px] sm:h-[18px]" /> 
+                      <span className="hidden sm:inline">Source Code</span>
+                      <span className="sm:hidden">Code</span>
                     </a>
+                  )}
+                </div>
+                <div className="flex gap-3 sm:gap-4 mt-auto pt-4 sm:pt-6">
+                {selectedProject.demoUrl && (
+                    <a 
+                      href={selectedProject.demoUrl} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="flex-1 flex items-center justify-center gap-2 bg-[var(--port-blue)] hover:bg-[var(--night-blue)] text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg sm:rounded-xl transition-all text-sm sm:text-base"
+                    >
+                      <ExternalLink size={16} className="sm:w-[18px] sm:h-[18px]" /> 
+                      <span className="hidden sm:inline">Demo</span>
+                      <span className="sm:hidden">Demo</span>
+                    </a>
+                  )}
                 </div>
               </div>
 

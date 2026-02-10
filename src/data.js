@@ -57,8 +57,8 @@ export const projectsData = [
           "Secure OTP Access Control",
           "Interactive Showings Calendar",
         ],
-        demoUrl: "https://app.delet.com",
-        githubUrl: "https://app.delet.com"
+        demoUrl: "https://delet.ai",
+        // githubUrl: "https://app.delet.com"
       },
     {
       id: 2,
@@ -94,7 +94,7 @@ export const projectsData = [
         "Cookies and Sessions",
         "Developer Library",
       ],
-      demoUrl: "https://demo-ecommerce.example.com",
+      // demoUrl: "https://demo-ecommerce.example.com",
       githubUrl: "https://github.com/oslabs-beta/Svault"
     },
     {
@@ -130,7 +130,7 @@ export const projectsData = [
         "Project categorization and filtering",
         "Progress tracking and analytics of your savings",
       ],
-      demoUrl: "https://demo-taskmanager.example.com",
+      // demoUrl: "https://demo-taskmanager.example.com",
       githubUrl: "https://github.com/Team-Debtless/Debtless"
     },
     {
@@ -165,7 +165,7 @@ export const projectsData = [
         "Save movies to a watchlist",
         "No decision making needed for movie night",
       ],
-      demoUrl: "https://demo-weather.example.com",
+      // demoUrl: "https://demo-weather.example.com",
       githubUrl: "https://github.com/mbuenrostro21/Solo-Project--CodeSmith"
     },
     // {
