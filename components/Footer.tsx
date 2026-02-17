@@ -10,9 +10,9 @@ export const Footer = () => {
                 <div>
                     <Link href={"/"}>Home</Link>
                 </div>
-                <div>
+                {/* <div>
                     <Link href={"/about"}>About Me</Link>
-                </div>
+                </div> */}
                 <div>
                     Resume
                 </div>
