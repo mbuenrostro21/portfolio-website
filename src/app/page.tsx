@@ -112,12 +112,12 @@ export default function Home() {
                   <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Features Shipped</p>
                 </div>
                 <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 ">
-                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">1M+</h1>
-                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Database Records</p>
-                </div>
-                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 ">
                   <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">300+</h1>
                   <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Code Reviews</p>
+                </div>
+                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 ">
+                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">1M+</h1>
+                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Database Records</p>
                 </div>
                 <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 col-span-2 sm:col-span-1">
                   <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">100%</h1>
