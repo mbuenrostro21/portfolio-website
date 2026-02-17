@@ -8,7 +8,6 @@ import {
     SiTailwindcss,
     SiSvelte,
     SiJavascript,
-    SiNextdotjs
 } from "react-icons/si";
 
 
