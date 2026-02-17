@@ -74,7 +74,7 @@ export default function Home() {
               {/* Photo Section - Shows here on mobile */}
               <div className="flex lg:hidden flex-col items-center gap-4">
                 <Image 
-                  src={'/port-photo.JPG'}
+                  src={'/port-photo.jpg'}
                   alt="portfolio photo"
                   width={250}
                   height={250}
