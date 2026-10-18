@@ -94,7 +94,8 @@ export const projectsData = [
         "Developer Library",
       ],
       // demoUrl: "https://demo-ecommerce.example.com",
-      githubUrl: "https://github.com/oslabs-beta/Svault"
+      githubUrl: "https://github.com/oslabs-beta/Svault",
+      docsUrl: "https://svault.mintlify.app/introduction"
     },
     {
       id: 3,

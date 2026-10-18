@@ -1,20 +1,25 @@
 'use client'
-import { NavBar } from "../../../components/NavBar";
-import { Footer } from "../../../components/Footer";
-import { useState, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { LaTime } from "../../../components/LaTime";
+import { StatusPill } from "../../../components/StatusPill";
+import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "../../links";
+
+type Status = "idle" | "sending" | "sent" | "error";
+
+const external = { target: "_blank", rel: "noopener noreferrer" };
+const labelClass = "flex flex-col gap-2 text-sm font-semibold text-ink-body";
 
 export default function Contact() {
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const formRef = useRef<HTMLFormElement>(null);
+  const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setIsLoading(true);
-   
+    setStatus("sending");
 
     const formData = new FormData(e.currentTarget);
-    
+
     try {
       const response = await fetch("/api/send", {
         method: "POST",
@@ -27,91 +32,83 @@ export default function Contact() {
           "Content-Type": "application/json",
         },
       });
-      
-      if (response.ok) {
-        console.log("Email sent successfully");
-        // Reset form or show success message
-        formRef.current?.reset();
-        // Show success message
-        setIsSubmitted(true);
-        // Reset success message after 3 seconds
-        setTimeout(() => {
-          setIsSubmitted(false);
-        }, 10000);
-      } else {
-        console.error("Failed to send email");
-      }
+
+      setStatus(response.ok ? "sent" : "error");
     } catch (error) {
       console.error("Error:", error);
-    } finally {
-      setIsLoading(false);
+      setStatus("error");
     }
   }
-      
 
-    return (
-      <div className="relative min-h-screen flex flex-col">
-        {/* Background Image with Black Overlay */}
-        <div className="absolute inset-0 z-0">
-          <div
-            className="w-full h-full bg-cover bg-center"
-            style={{ backgroundImage: `url('/palm-trees-deep.png')` }}
-          >
-            <div className="w-full h-full bg-[var(--night-blue)]/20" />
+  const isSending = status === "sending";
+
+  return (
+    <section className="relative flex items-center min-h-[calc(100vh-160px)]">
+      <Image
+        src="/palm-trees-deep.png"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(90deg,rgba(10,22,51,0.94)_0%,rgba(10,22,51,0.8)_50%,rgba(10,22,51,0.45)_100%),linear-gradient(0deg,#0a1633_0%,rgba(10,22,51,0)_30%)]" />
+
+      <div className="container-page relative py-24 grid grid-cols-[repeat(auto-fit,minmax(min(100%,400px),1fr))] gap-14 items-start">
+        <div className="flex flex-col gap-7">
+          <StatusPill />
+          <h1 className="heading text-[clamp(44px,5.5vw,72px)] leading-[1.04] text-white">
+            <span className="block">Let’s talk about</span>
+            <span className="block text-accent">your team.</span>
+          </h1>
+          <p className="text-lg leading-[1.6] max-w-[44ch] text-secondary m-0">
+            Hiring for a frontend or full stack role? Send a note and I’ll reply within a day.
+          </p>
+          <div className="flex flex-col gap-3.5 text-base text-secondary">
+            <LaTime />
+            <span>In person in LA, or remote</span>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a href={LINKEDIN_URL} {...external} className="btn btn-sm btn-outline">LinkedIn ↗</a>
+            <a href={GITHUB_URL} {...external} className="btn btn-sm btn-outline">GitHub ↗</a>
+            <a href={RESUME_URL} {...external} className="btn btn-sm btn-outline">Resume ↗</a>
           </div>
         </div>
-  
-        {/* Foreground Content */}
-        <div className="relative z-10 flex flex-col min-h-screen">
-          <NavBar />
-          <div className="flex flex-col justify-center items-center font-anta flex-1 px-4 py-8 md:py-12 mb-8">
-            <div className="bg-[var(--port-white)] w-full max-w-[700px] md:w-[700px] md:h-[500px] shadow-2xl rounded-lg flex flex-col items-center p-6 sm:p-8 md:p-0 md:justify-center">
-                <h1 className="text-3xl sm:text-4xl text-[var(--port-blue)] mb-8 md:my-12">Contact Me</h1>
-                <form className="flex flex-col text-[var(--port-blue)]/70 gap-8 sm:gap-10 md:gap-12 w-full sm:w-3/4" onSubmit={handleSubmit} ref={formRef}>
-                    <input 
-                        className="border-b-1 ps-2 py-2 md:py-0 text-base"
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Name"
-                        disabled={isLoading}
-                        required
-                    />
-                    <input
-                        className="border-b-1 ps-2 py-2 md:py-0 text-base"
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Email"
-                        disabled={isLoading}
-                        required
-                    />
-                    <textarea
-                        className="border-b-1 ps-2 py-2 md:py-0 min-h-[100px] max-h-[100px] text-base"
-                        id="message"
-                        name="message"
-                        placeholder="Message"
-                        disabled={isLoading}
-                        required
-                    />
-                    <div className="flex flex-col items-center justify-center mt-2 sm:mt-4 md:mt-0">
-                    <button 
-                        className={`${
-                          isSubmitted 
-                            ? 'bg-white-500 text-[var(--port-purple)] border-white-500' 
-                            : 'bg-[var(--light-blue)] text-[var(--port-purple)] border-[var(--port-purple)]'
-                        } rounded-sm w-full sm:w-48 md:w-36 h-12 font-anta border transition-colors duration-300 text-base`}
-                        type="submit" 
-                        disabled={isLoading || isSubmitted}
-                      >
-                          {isLoading ? 'Sending...' : isSubmitted ? 'Successfully Submitted!' : 'Hire Me'}
-                      </button>
-                    </div>
-                </form>
+
+        <div data-aos="fade-up" data-aos-delay="150" className="bg-card rounded-[40px] p-[clamp(28px,4vw,44px)] shadow-[0_24px_60px_rgba(0,0,0,0.4)] text-navy">
+          {status === "sent" ? (
+            <div className="flex flex-col gap-4 py-6">
+              <h2 className="heading text-[30px] leading-[1.15] text-ink">Thanks, message sent.</h2>
+              <p className="text-base leading-[1.6] text-ink-body m-0">I’ll get back to you within a day.</p>
+              <Link href="/" className="btn btn-sm btn-card-outline self-start px-[22px] py-3">Back to home</Link>
             </div>
-          </div>
-          <Footer />
+          ) : (
+            <form className="flex flex-col gap-[18px]" onSubmit={handleSubmit}>
+              <h2 className="heading text-[30px] leading-[1.15] text-ink mb-1.5">Send a message</h2>
+              <label className={labelClass}>
+                Name
+                <input className="field" type="text" name="name" placeholder="Your name" disabled={isSending} required />
+              </label>
+              <label className={labelClass}>
+                Work email
+                <input className="field" type="email" name="email" placeholder="you@company.com" disabled={isSending} required />
+              </label>
+              <label className={labelClass}>
+                Message
+                <textarea className="field" name="message" rows={5} placeholder="The role, the team, and a good time to talk" disabled={isSending} required />
+              </label>
+              {status === "error" && (
+                <p className="text-[15px] text-[#7a1f1f] m-0" role="alert">
+                  Something went wrong sending your message. Please try again.
+                </p>
+              )}
+              <button type="submit" className="btn btn-card-primary self-start mt-1 px-7" disabled={isSending}>
+                {isSending ? "Sending…" : "Send message"}
+              </button>
+            </form>
+          )}
         </div>
       </div>
-    );
-  }
+    </section>
+  );
+}

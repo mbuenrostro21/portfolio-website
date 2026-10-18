@@ -1,29 +1,13 @@
 import React from "react";
-import Link from "next/link";
-import { FaLinkedin, FaGithub,  } from "react-icons/fa";
-import { LuVault } from "react-icons/lu";
+import { GITHUB_URL, LINKEDIN_URL } from "../src/links";
 
 export const Footer = () => {
     return (
-        <footer className="absolute inset-x-0 bottom-0 bg-white/10 w-full h-24 font-roboto lg:text-[var(--port-blue)] sm:text-[var(--port-white)]">
-            <div className="flex items-center justify-center gap-5 mt-5 mb-3">
-                <div>
-                    <Link href={"/"}>Home</Link>
-                </div>
-                {/* <div>
-                    <Link href={"/about"}>About Me</Link>
-                </div> */}
-                <div>
-                    Resume
-                </div>
-                <div>
-                    <Link href={"/projects"}>Projects</Link>
-                </div>
-            </div>
-            <div className="flex items-center justify-center gap-5 pb-5">
-                <a href="https://www.linkedin.com/in/michael-buenrostro/" target="_blank"><FaLinkedin size={25}/></a>
-              <a href="https://github.com/mbuenrostro21" target="_blank"><FaGithub size={25}/></a>
-              <a href="https://svault.mintlify.app/introduction" target="_blank"><LuVault size={25}/></a>
+        <footer className="container-page flex flex-wrap justify-between gap-3 pt-8 pb-12 text-sm text-muted">
+            <span>© {new Date().getFullYear()} Michael Buenrostro · Los Angeles, CA</span>
+            <div className="flex gap-5">
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </footer>
     )

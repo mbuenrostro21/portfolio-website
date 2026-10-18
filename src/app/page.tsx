@@ -1,269 +1,181 @@
-import { NavBar } from "../../components/NavBar";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { LuVault } from "react-icons/lu";
 import Image from 'next/image'
 import Link from "next/link";
+import { LaTime } from "../../components/LaTime";
+import { StatusPill } from "../../components/StatusPill";
+import { TypewriterHeading } from "../../components/TypewriterHeading";
+import { projectsData } from "../data";
+import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "../links";
+
+const stats = [
+  { value: "4+", label: "Years Experience" },
+  { value: "50+", label: "Features Shipped" },
+  { value: "400+", label: "Code Reviews" },
+  { value: "1M+", label: "Database Records" },
+  { value: "100%", label: "Employer Confidence" },
+];
+
+const stack = [
+  "TypeScript",
+  "JavaScript",
+  "React",
+  "Next.js",
+  "Svelte",
+  "Node.js",
+  "Express.js",
+  "PostgreSQL",
+  "MongoDB",
+  "Tailwind CSS",
+];
+
+const external = { target: "_blank", rel: "noopener noreferrer" };
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Background Image with Black Overlay */}
-      <div className="absolute inset-0 z-0">
-        <div
-          className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url('/la-backdrop-enhanced.png')` }}
-        >
-          <div className="w-full h-full bg-[var(--port-blue)]/20" />
-        </div>
-      </div>
+    <>
+      {/* Hero */}
+      <section className="relative flex items-center min-h-[min(820px,92vh)]">
+        <Image
+          src="/la-backdrop-enhanced.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(90deg,rgba(10,22,51,0.94)_0%,rgba(10,22,51,0.78)_45%,rgba(10,22,51,0.35)_100%),linear-gradient(0deg,#0a1633_0%,rgba(10,22,51,0)_30%)]" />
 
-      {/* Animated Elements Layer */}
-      <div className="absolute inset-0 z-5">
-        {/* Floating Particles */}
-        <div className="particle particle-1"></div>
-        <div className="particle particle-2"></div>
-        <div className="particle particle-3"></div>
-        <div className="particle particle-4"></div>
-        <div className="particle particle-5"></div>
-        <div className="particle particle-6"></div>
-        <div className="particle particle-7"></div>
-        <div className="particle particle-8"></div>
-        <div className="particle particle-9"></div>
-        <div className="particle particle-10"></div>
-        <div className="particle particle-11"></div>
-        <div className="particle particle-12"></div>
-
-        {/* Twinkling Stars */}
-        <div className="star star-1">✨</div>
-        <div className="star star-2">✨</div>
-        <div className="star star-3">✨</div>
-        <div className="star star-4">✨</div>
-        <div className="star star-5">✨</div>
-        <div className="star star-6">✨</div>
-        <div className="star star-7">✨</div>
-        <div className="star star-8">✨</div>
-        <div className="star star-9">✨</div>
-        <div className="star star-10">✨</div>
-        <div className="star star-11">✨</div>
-        <div className="star star-12">✨</div>
-        <div className="star star-13">✨</div>
-        <div className="star star-14">✨</div>
-        <div className="star star-15">✨</div>
-
-        {/* Subtle Gradient Animation */}
-        <div className="animated-gradient"></div>
-      </div>
-
-      {/* Foreground Content */}
-      <div className="relative z-10">
-        <NavBar />
-        
-        {/* Mobile-First Responsive Layout */}
-        <div className="px-4 py-8 md:px-8 lg:px-16 max-w-8xl mx-auto">
-          {/* Mobile: Vertical Stack, Desktop: Grid Layout */}
-          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12">
-            
-            {/* Left Column */}
-            <div className="flex flex-col gap-8">
-              {/* Header Section */}
-              <div className="flex flex-col items-start text-left gap-4 md:gap-6">
-                <h1 className="font-anta text-3xl md:text-4xl lg:text-5xl">Michael Buenrostro</h1>
-                <h2 className="font-anta text-2xl md:text-3xl lg:text-4xl">Full Stack Developer</h2>
-              </div>
-
-              {/* Photo Section - Shows here on mobile */}
-              <div className="flex lg:hidden flex-col items-center gap-4">
-                <Image 
-                  src={'/port-photo.jpg'}
-                  alt="portfolio photo"
-                  width={250}
-                  height={250}
-                  className="rounded-md"
-                />
-                <div className="flex flex-row justify-center gap-3">
-                  <a href="https://www.linkedin.com/in/michael-buenrostro/" target="_blank" rel="noopener noreferrer">
-                    <FaLinkedin size={30}/>
-                  </a>
-                  <a href="https://github.com/mbuenrostro21" target="_blank" rel="noopener noreferrer">
-                    <FaGithub size={30}/>
-                  </a>
-                  <a href="https://svault.mintlify.app/introduction" target="_blank" rel="noopener noreferrer">
-                    <LuVault size={30}/>
-                  </a>
-                </div>
-              </div>
-              
-              {/* About Me Section */}
-              <div className="bg-[var(--light-blue)] rounded-md border border-[var(--port-purple)] p-5 md:p-6">
-                <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-3">About Me</h1>
-                <p className="font-roboto text-[var(--port-purple)] text-sm md:text-base leading-relaxed">
-                  I am a Full Stack Developer with over 3 years of experience building scalable, production-ready applications. My expertise lies in bridging the gap between complex logic and the high-impact results that drive business growth. I thrive at the intersection of clean architecture and purposeful problem-solving. My primary focus is on the Frontend, where I specialize in crafting intuitive, high-performance interfaces. I believe a great product is defined by its User Experience. To me, code is successful only when it provides a frictionless journey for the user.
-                </p>
-              </div>
-
-              {/* Stats Grid */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
-                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5">
-                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">3+</h1>
-                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Years Experience</p>
-                </div>
-                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 ">
-                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">35+</h1>
-                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Features Shipped</p>
-                </div>
-                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 ">
-                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">300+</h1>
-                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Code Reviews</p>
-                </div>
-                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 ">
-                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">1M+</h1>
-                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Database Records</p>
-                </div>
-                <div className="bg-[var(--light-blue)] rounded-md flex flex-col justify-center items-center border border-[var(--port-purple)] p-5 md:p-5 col-span-2 sm:col-span-1">
-                  <h1 className="font-anta text-[var(--port-purple)] text-xl md:text-2xl mb-1 font-bold">100%</h1>
-                  <p className="font-roboto text-[var(--port-purple)] text-[10px] md:text-xs text-center">Employer Confidence</p>
-                </div>
-              </div>
+        <div className="container-page relative py-24 grid grid-cols-[repeat(auto-fit,minmax(min(100%,420px),1fr))] gap-14 items-center">
+          <div className="flex flex-col gap-7">
+            <div className="flex flex-wrap gap-2">
+              <StatusPill />
+              <LaTime className="pill pill-outline" />
             </div>
 
-            {/* Right Column - Photo Section (Desktop Only) */}
-            <div className="hidden lg:flex flex-col items-center justify-start pt-6">
-              <Image 
-                src={'/port-photo.jpg'}
-                alt="portfolio photo"
-                width={300}
-                height={300}
-                className="rounded-md"
+            <TypewriterHeading
+              className="heading text-[clamp(44px,6vw,80px)] leading-[1.04] text-white"
+              lines={[
+                { text: "Michael Buenrostro" },
+                { text: "Full Stack Developer", className: "text-accent" },
+              ]}
+            />
+
+            <div className="flex flex-wrap gap-3">
+              <a href="#work" className="btn btn-primary">Projects</a>
+              <a href={RESUME_URL} {...external} className="btn btn-outline">Resume</a>
+            </div>
+
+            <div className="flex flex-wrap gap-5 text-[15px] font-semibold">
+              <a href={GITHUB_URL} {...external}>GitHub ↗</a>
+              <a href={LINKEDIN_URL} {...external}>LinkedIn ↗</a>
+            </div>
+          </div>
+
+          <div className="justify-self-center w-[min(360px,100%)]" data-aos="fade-up" data-aos-delay="200">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[999px_999px_32px_32px] border border-[rgba(185,211,240,0.25)] shadow-[0_24px_60px_rgba(0,0,0,0.45)]">
+              <Image
+                src="/port-photo.jpg"
+                alt="Michael Buenrostro"
+                fill
+                priority
+                sizes="360px"
+                className="object-cover"
               />
-              <div className="flex flex-row justify-center mt-6 gap-3">
-                <a href="https://www.linkedin.com/in/michael-buenrostro/" target="_blank" rel="noopener noreferrer">
-                  <FaLinkedin size={30}/>
-                </a>
-                <a href="https://github.com/mbuenrostro21" target="_blank" rel="noopener noreferrer">
-                  <FaGithub size={30}/>
-                </a>
-                <a href="https://svault.mintlify.app/introduction" target="_blank" rel="noopener noreferrer">
-                  <LuVault size={30}/>
-                </a>
-              </div>
-              <div className="flex justify-center items-center mt-8">
-                <button className="bg-[var(--light-blue)] text-[var(--port-purple)] border border-[var(--port-purple)] rounded-sm px-8 py-3 font-roboto hover:bg-opacity-90 transition-all">
-                  <Link href={"/contact"}>Contact Me</Link>
-                </button>
-              </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <div className="container-page">
+        {/* Stats */}
+        <section className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-4 pt-6 pb-28">
+          {stats.map((stat, i) => (
+            <div key={stat.label} data-aos="fade-up" data-aos-delay={i * 100} className="bg-card rounded-[28px] p-7 flex flex-col gap-2">
+              <span className="heading text-[44px] leading-none text-ink">{stat.value}</span>
+              <span className="text-[15px] leading-[1.4] text-ink-body">{stat.label}</span>
+            </div>
+          ))}
+        </section>
+
+        {/* Projects */}
+        <section id="work" className="scroll-mt-24 flex flex-col gap-12 pb-28">
+          <h2 className="heading text-[clamp(32px,4vw,48px)] leading-[1.1] text-white" data-aos="fade-up">Projects</h2>
+
+          {projectsData.map((project) => (
+            <article
+              key={project.id}
+              data-aos="fade-up"
+              className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,360px),1fr))] gap-10 items-center"
+            >
+              <div className="relative aspect-[16/10] overflow-hidden rounded-[32px] bg-panel border border-[rgba(185,211,240,0.15)]">
+                <Image
+                  src={project.screenshot}
+                  alt={`${project.name} screenshot`}
+                  fill
+                  sizes="(max-width: 860px) 100vw, 540px"
+                  className="object-cover object-top"
+                />
+              </div>
+
+              <div className="flex flex-col gap-4">
+                <div className="flex flex-wrap gap-2">
+                  {project.techStack.map((tech) => (
+                    <span key={tech.name} className="tag tag-filled">{tech.name}</span>
+                  ))}
+                </div>
+                <h3 className="heading text-[30px] leading-[1.15] text-white">{project.name}</h3>
+                <p className="text-base leading-[1.65] max-w-[50ch] text-secondary m-0">{project.summary}</p>
+                <ul className="flex flex-col gap-1.5 text-[15px] leading-[1.5] text-secondary m-0 p-0 list-none">
+                  {project.keyFeatures.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2.5">
+                      <span className="mt-[7px] w-1.5 h-1.5 shrink-0 rounded-full bg-success" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="flex flex-wrap gap-5 text-[15px] font-semibold">
+                  {project.demoUrl && <a href={project.demoUrl} {...external}>Demo ↗</a>}
+                  {project.docsUrl && <a href={project.docsUrl} {...external}>Docs ↗</a>}
+                  {project.githubUrl && <a href={project.githubUrl} {...external}>Source Code ↗</a>}
+                </div>
+              </div>
+            </article>
+          ))}
+        </section>
+
+        {/* About */}
+        <section className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,340px),1fr))] gap-12 pb-28" data-aos="fade-up">
+          <h2 className="heading text-[clamp(32px,4vw,48px)] leading-[1.1] max-w-[14ch] text-white">About Me</h2>
+          <div className="flex flex-col gap-5 text-[17px] leading-[1.65] text-secondary">
+            <p className="m-0">
+              I am a Full Stack Developer with over 4 years of experience building scalable, production-ready applications. My expertise lies in bridging the gap between complex logic and the high-impact results that drive business growth. I thrive at the intersection of clean architecture and purposeful problem-solving.
+            </p>
+            <p className="m-0">
+              My primary focus is on the Frontend, where I specialize in crafting intuitive, high-performance interfaces. I believe a great product is defined by its User Experience. To me, code is successful only when it provides a frictionless journey for the user.
+            </p>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {stack.map((tech) => (
+                <span key={tech} className="tag tag-outline">{tech}</span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Contact CTA */}
+        <section className="pb-16">
+          <div data-aos="zoom-in-up" className="bg-card rounded-[48px] p-[clamp(32px,5vw,64px)] flex flex-col gap-5">
+            <h2 className="heading text-[clamp(32px,4vw,48px)] leading-[1.1] max-w-[18ch] text-ink">
+              Hiring a Full Stack Developer in LA or remote?
+            </h2>
+            <p className="text-[17px] leading-[1.6] max-w-[50ch] text-ink-body m-0">
+              I usually reply within a day. Happy to walk through any project or do a technical screen.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/contact" className="btn btn-card-primary">Contact Me</Link>
+              <a href={LINKEDIN_URL} {...external} className="btn btn-card-outline">Connect on LinkedIn</a>
+            </div>
+          </div>
+        </section>
       </div>
-
-      {/* CSS Styles */}
-      <style>{`
-        /* Floating Particles */
-        .particle {
-          position: absolute;
-          width: 4px;
-          height: 4px;
-          background: rgba(255, 255, 255, 0.6);
-          border-radius: 50%;
-          animation: float 6s ease-in-out infinite;
-        }
-
-        .particle-1 { top: 20%; left: 10%; animation-delay: 0s; animation-duration: 8s; }
-        .particle-2 { top: 60%; left: 20%; animation-delay: 1s; animation-duration: 10s; }
-        .particle-3 { top: 30%; left: 70%; animation-delay: 2s; animation-duration: 7s; }
-        .particle-4 { top: 80%; left: 60%; animation-delay: 3s; animation-duration: 9s; }
-        .particle-5 { top: 10%; left: 80%; animation-delay: 4s; animation-duration: 11s; }
-        .particle-6 { top: 50%; left: 90%; animation-delay: 5s; animation-duration: 6s; }
-        .particle-7 { top: 20%; left: 30%; animation-delay: 0s; animation-duration: 8s; }
-        .particle-8 { top: 60%; left: 50%; animation-delay: 1s; animation-duration: 10s; }
-        .particle-9 { top: 40%; left: 70%; animation-delay: 2s; animation-duration: 7s; }
-        .particle-10 { top: 70%; left: 60%; animation-delay: 3s; animation-duration: 9s; }
-        .particle-11 { top: 10%; left: 35%; animation-delay: 4s; animation-duration: 11s; }
-        .particle-12 { top: 50%; left: 80%; animation-delay: 5s; animation-duration: 6s; }
-
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) translateX(0px); opacity: 0.6; }
-          50% { transform: translateY(-20px) translateX(10px); opacity: 1; }
-        }
-
-        /* Twinkling Stars */
-        .star {
-          position: absolute;
-          font-size: 1rem;
-          animation: twinkle 3s ease-in-out infinite;
-        }
-
-        .star-1 { top: 10%; left: 15%; animation-delay: 0s; }
-        .star-2 { top: 20%; left: 85%; animation-delay: 1s; }
-        .star-3 { top: 5%; left: 60%; animation-delay: 2s; }
-        .star-4 { top: 15%; left: 40%; animation-delay: 1.5s; }
-        .star-5 { top: 25%; left: 25%; animation-delay: 2.5s; }
-        .star-6 { top: 8%; left: 75%; animation-delay: 0.5s; }
-        .star-7 { top: 18%; left: 50%; animation-delay: 1.8s; }
-        .star-8 { top: 12%; left: 30%; animation-delay: 2.2s; }
-        .star-9 { top: 22%; left: 70%; animation-delay: 0.8s; }
-        .star-10 { top: 6%; left: 45%; animation-delay: 2.8s; }
-        .star-11 { top: 28%; left: 55%; animation-delay: 1.2s; }
-        .star-12 { top: 14%; left: 20%; animation-delay: 2.6s; }
-        .star-13 { top: 9%; left: 80%; animation-delay: 0.3s; }
-        .star-14 { top: 26%; left: 35%; animation-delay: 1.9s; }
-        .star-15 { top: 16%; left: 65%; animation-delay: 2.4s; }
-
-        @keyframes twinkle {
-          0%, 100% { opacity: 0.3; transform: scale(0.8); }
-          50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        /* Animated Gradient Overlay */
-        .animated-gradient {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: linear-gradient(
-            45deg,
-            rgba(59, 130, 246, 0.1),
-            rgba(147, 51, 234, 0.1),
-            rgba(59, 130, 246, 0.1)
-          );
-          background-size: 400% 400%;
-          animation: gradientShift 15s ease infinite;
-        }
-
-        @keyframes gradientShift {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-
-        /* Optional: Subtle pulsing effect on content */
-        h1, h2, h3 {
-          animation: subtlePulse 4s ease-in-out infinite;
-        }
-
-        @keyframes subtlePulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.9; }
-        }
-
-        /* Ensure overflow is hidden to prevent scrollbars from animations */
-        .overflow-hidden {
-          overflow: hidden;
-        }
-
-        /* Mobile optimizations */
-        @media (max-width: 768px) {
-          .star {
-            font-size: 0.75rem;
-          }
-          
-          .particle {
-            width: 3px;
-            height: 3px;
-          }
-        }
-      `}</style>
-    </div>
+    </>
   );
 }
