@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { LaTime } from "../../../components/LaTime";
 import { StatusPill } from "../../../components/StatusPill";
-import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "../../links";
+import { GITHUB_URL, LINKEDIN_URL } from "../../links";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -71,7 +71,6 @@ export default function Contact() {
           <div className="flex flex-wrap gap-3">
             <a href={LINKEDIN_URL} {...external} className="btn btn-sm btn-outline">LinkedIn ↗</a>
             <a href={GITHUB_URL} {...external} className="btn btn-sm btn-outline">GitHub ↗</a>
-            <a href={RESUME_URL} {...external} className="btn btn-sm btn-outline">Resume ↗</a>
           </div>
         </div>
 

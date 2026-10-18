@@ -4,7 +4,7 @@ import { LaTime } from "../../components/LaTime";
 import { StatusPill } from "../../components/StatusPill";
 import { TypewriterHeading } from "../../components/TypewriterHeading";
 import { projectsData } from "../data";
-import { GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "../links";
+import { GITHUB_URL, LINKEDIN_URL } from "../links";
 
 const stats = [
   { value: "4+", label: "Years Experience" },
@@ -61,7 +61,6 @@ export default function Home() {
 
             <div className="flex flex-wrap gap-3">
               <a href="#work" className="btn btn-primary">Projects</a>
-              <a href={RESUME_URL} {...external} className="btn btn-outline">Resume</a>
             </div>
 
             <div className="flex flex-wrap gap-5 text-[15px] font-semibold">

@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { RESUME_URL } from "../src/links";
 
 export const NavBar: React.FC = () => {
   return (
@@ -18,14 +17,6 @@ export const NavBar: React.FC = () => {
       <Link href="/#work" className="text-[15px] font-semibold text-secondary hover:text-white">
         Projects
       </Link>
-      <a
-        href={RESUME_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-[15px] font-semibold text-secondary hover:text-white"
-      >
-        Resume
-      </a>
       <Link
         href="/contact"
         className="text-[15px] font-semibold text-navy bg-card hover:bg-card-hover px-5 py-2.5 rounded-full"
