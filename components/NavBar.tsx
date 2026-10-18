@@ -1,37 +1,37 @@
 import React from "react";
 import Link from "next/link";
-import Image from 'next/image'
+import Image from "next/image";
+import { RESUME_URL } from "../src/links";
 
 export const NavBar: React.FC = () => {
   return (
-    <nav className="bg-white/4 shadow-md h-16 rounded py-3 px-5 font-roboto">
-      <div className="flex justify-between items-center">
-      <div>
-        <Link href="/">
-        <Image 
-              src={'/port-logo.png'}
-              alt="portfolio logo"
-              width={50}
-              height={50}
-              className="flex justify-items-start"
-            />
-        </Link>
-      </div>
-        <div className="flex gap-5">
-            {/* <div><Link href="/about">About</Link></div> */}
-            <div>
-            <a 
-                href="/Michael_Buenrostro_Resume_2025.pdf" 
-                download="Michael_Buenrostro_Resume_2025.pdf"
-                className="text-white cursor-pointer hover:text-[var(--light-blue)] transition-colors"
-            >
-              Resume
-            </a>
-            </div>
-            <div><Link href="/projects">Projects</Link></div>
-            <div className="border border-white rounded-sm w-[75px] text-center bg-[#FDFDFA]/8"><Link href={"/contact"}>Contact</Link></div>
-        </div>
-      </div>
+    <nav className="sticky top-0 z-[5] flex items-center gap-4 sm:gap-7 px-[clamp(20px,5vw,72px)] py-3 bg-[rgba(10,22,51,0.72)] backdrop-blur-[14px] border-b border-[rgba(156,195,255,0.12)]">
+      <Link href="/" className="mr-auto" aria-label="Home">
+        <Image
+          src="/port-logo.png"
+          alt="Michael Buenrostro logo"
+          width={60}
+          height={50}
+          priority
+        />
+      </Link>
+      <Link href="/#work" className="text-[15px] font-semibold text-secondary hover:text-white">
+        Projects
+      </Link>
+      <a
+        href={RESUME_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-[15px] font-semibold text-secondary hover:text-white"
+      >
+        Resume
+      </a>
+      <Link
+        href="/contact"
+        className="text-[15px] font-semibold text-navy bg-card hover:bg-card-hover px-5 py-2.5 rounded-full"
+      >
+        Contact
+      </Link>
     </nav>
   );
 };
